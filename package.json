@@ -4,11 +4,17 @@
   "description": "",
   "main": "simpleRoom.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "NODE_ENV='development' npm run start-server",
+    "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
+    "start": "node server"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "heatmap.js": "^2.0.5"
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "heatmap.js": "^2.0.5",
+    "morgan": "^1.10.0"
   }
 }
