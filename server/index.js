@@ -32,20 +32,9 @@ const createApp = () => {
   // any remaining requests with an extension (.js, .css, etc.) send 404
   app.use((req, res, next) => {
     if (path.extname(req.path).length) {
-      // let request = req.path.split('/')
-      // console.log(request[request.length - 1])
-      // if (request[request.length - 1] === 'bundle.js') {
-      //   res.sendFile(path.join(__dirname, '..', 'public/bundle.js'))
-      // } else if (request[request.length - 1] === 'style.css') {
-      //   res.sendFile(path.join(__dirname, '..', 'public/style.css'))
-      // } else if (request[request.length - 1] === 'mountaineering.jpg') {
-      //   res.sendFile(
-      //     path.join(__dirname, '..', 'public/images/mountaineering.jpg')
-      //   )
-      // } else {
       const err = new Error("Not found");
       err.status = 404;
-      //}
+      next(err);
     } else {
       next();
     }
