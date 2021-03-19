@@ -6,6 +6,7 @@
   "scripts": {
     "build-client": "webpack",
     "build-client-watch": "webpack -w",
+    "heroku-postbuild": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "NODE_ENV='development' npm run build-client-watch & NODE_ENV='development' npm run start-server",
     "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
